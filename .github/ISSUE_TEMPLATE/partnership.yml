@@ -1,10 +1,10 @@
-name: Partnership interest / Partnerinteresse
-description: Non-confidential integration interest / Nicht vertrauliches Integrationsinteresse
-title: "[Partnership] "
+name: Future collaboration / Spaetere Zusammenarbeit
+description: Exploratory, non-confidential interest / Unverbindliches, nicht vertrauliches Interesse
+title: "[Collaboration] "
 body:
   - type: markdown
     attributes:
-      value: "Public issue: no secrets, personal data, customer details or security findings. No agreement or source access arises from this request. Öffentlich: keine Geheimnisse, Personendaten, Kundendetails oder Sicherheitsbefunde. Diese Anfrage begründet weder Vereinbarung noch Quellzugang."
+      value: "Personal development project, not a sales offer. Public issue: no secrets, personal data, customer details or security findings. No agreement or source access arises from this request. Persönliches Entwicklungsprojekt, kein Verkaufsangebot. Öffentlich: keine Geheimnisse, Personendaten, Kundendetails oder Sicherheitsbefunde. Diese Anfrage begründet weder Vereinbarung noch Quellzugang."
   - type: textarea
     id: integration
     attributes:
