@@ -24,6 +24,8 @@ Near-term goals: constructive developer/security feedback, focused individually 
 
 ## Changelog
 
+2026-10-26 (documentation launch): this documentation repository is public. Its 28-file documentation-only boundary was checked, and the public project page was verified while signed out. GitHub private vulnerability reporting is enabled and its public reporting entry is visible; no test report was submitted. Ordinary questions use the four issue forms. The PAS Core source, runtime state and private review material remain excluded. No software release, license change, new PAS software tests or production approval accompanies this documentation launch.
+
 2026-10-26 (presentation update): positioned explicitly as a personal development project seeking technical feedback, not a commercial offer. GitHub contact routes and source-access limits clarified. No source publication, license change, new PAS software tests or legal exemption is asserted. Actual repository visibility and reporting availability are shown by GitHub, not inferred from this changelog.
 
 2026-10-26: a separate private documentation repository was created under `ripitship/pas-privacy-access-system`. The documentation is being staged without the PAS source or previous Git history. Public launch and confidential reporting setup remain gated; no software suite rerun or license change is claimed.

@@ -24,6 +24,8 @@ Nächste Ziele: konstruktives Entwickler-/Security-Feedback, fokussierte individ
 
 ## Änderungsstand
 
+26.10.2026 (Dokumentationsstart): Dieses Dokumentationsrepository ist öffentlich. Die auf 28 Dateien begrenzte Dokumentationsfreigabe wurde geprüft; die Projektseite war ohne Anmeldung erreichbar. Private Schwachstellenmeldung über GitHub ist aktiviert und der öffentliche Einstieg sichtbar; keine Testmeldung wurde abgeschickt. Normale Fragen nutzen die vier Issue-Formulare. PAS-Kerncode, Laufzeitdaten und private Review-Unterlagen bleiben ausgeschlossen. Dieser Dokumentationsstart umfasst keine Softwareveröffentlichung, Lizenzänderung, neuen PAS-Softwaretests oder Produktionsfreigabe.
+
 26.10.2026 (Vorstellungsupdate): ausdrücklich als persönliches Entwicklungsprojekt für fachliches Feedback eingeordnet, nicht als kommerzielles Angebot. GitHub-Kontaktwege und Grenzen des Quellzugangs präzisiert. Keine Quellveröffentlichung, Lizenzänderung, neuen PAS-Softwaretests oder rechtliche Ausnahme werden behauptet. Tatsächliche Repository-Sichtbarkeit und Verfügbarkeit des Meldewegs zeigt GitHub; sie folgen nicht aus diesem Änderungsstand.
 
 26.10.2026: ein getrenntes privates Dokumentationsrepository unter `ripitship/pas-privacy-access-system` wurde angelegt. Die Dokumentation wird ohne PAS-Quellcode und bisherige Git-Historie vorbereitet. Öffentlicher Start und vertraulicher Sicherheitsmeldeweg sind noch nicht freigegeben; erneute Softwaretests oder eine Lizenzänderung werden nicht behauptet.
