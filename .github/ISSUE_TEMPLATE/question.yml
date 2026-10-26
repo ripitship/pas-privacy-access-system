@@ -1,0 +1,14 @@
+name: Question / Frage
+description: Non-confidential question / Nicht vertrauliche Frage
+title: "[Question] "
+body:
+  - type: markdown
+    attributes:
+      value: "Public issue: no secrets, personal data, customer details or security findings. Öffentlich: keine Geheimnisse, Personendaten, Kundendetails oder Sicherheitsbefunde."
+  - type: textarea
+    id: question
+    attributes:
+      label: Question and context / Frage und Kontext
+      description: Use synthetic examples only. Nur synthetische Beispiele.
+    validations:
+      required: true

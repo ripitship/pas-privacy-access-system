@@ -1,0 +1,14 @@
+name: Feedback / Rückmeldung
+description: Non-confidential documentation feedback / Nicht vertrauliches Dokumentationsfeedback
+title: "[Feedback] "
+body:
+  - type: markdown
+    attributes:
+      value: "Public issue: no secrets, personal data, customer details or security findings. Öffentlich: keine Geheimnisse, Personendaten, Kundendetails oder Sicherheitsbefunde."
+  - type: textarea
+    id: feedback
+    attributes:
+      label: Page, observation and suggestion / Seite, Beobachtung und Vorschlag
+      description: Explain with synthetic examples; no source excerpts. Synthetische Beispiele, keine Quellauszüge.
+    validations:
+      required: true

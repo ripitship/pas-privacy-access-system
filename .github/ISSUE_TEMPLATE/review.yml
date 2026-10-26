@@ -1,0 +1,14 @@
+name: Private review request / Privates Review anfragen
+description: Request scope only; no automatic access / Nur Umfang anfragen; kein automatischer Zugang
+title: "[Review request] "
+body:
+  - type: markdown
+    attributes:
+      value: "This issue is public. No secrets, personal data, customers or security findings. Individual approval and agreed terms precede source access; no SLA. Dieses Issue ist öffentlich. Keine Geheimnisse, Personendaten, Kunden oder Sicherheitsbefunde. Individuelle Freigabe und Bedingungen vor Quellzugang; kein SLA."
+  - type: textarea
+    id: scope
+    attributes:
+      label: Expertise and proposed review scope / Erfahrung und vorgeschlagener Review-Umfang
+      description: Describe non-confidential goals only. Nur nicht vertrauliche Ziele beschreiben.
+    validations:
+      required: true

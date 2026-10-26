@@ -1,0 +1,14 @@
+name: Partnership interest / Partnerinteresse
+description: Non-confidential integration interest / Nicht vertrauliches Integrationsinteresse
+title: "[Partnership] "
+body:
+  - type: markdown
+    attributes:
+      value: "Public issue: no secrets, personal data, customer details or security findings. No agreement or source access arises from this request. Öffentlich: keine Geheimnisse, Personendaten, Kundendetails oder Sicherheitsbefunde. Diese Anfrage begründet weder Vereinbarung noch Quellzugang."
+  - type: textarea
+    id: integration
+    attributes:
+      label: Integration goal and collaboration scope / Integrationsziel und Kooperationsumfang
+      description: Generic scenario only; no private customer facts. Nur allgemeines Szenario, keine privaten Kundenfakten.
+    validations:
+      required: true
