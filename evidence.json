@@ -1,0 +1,13 @@
+{
+  "evidence_date": "2026-10-06",
+  "classification": "historical internal results; sanitized projection; not rerun on preparation date",
+  "software_version": "0.8.0",
+  "api": "v1",
+  "schema": 6,
+  "production_ready": false,
+  "regression": {"system": "Darwin", "machine": "arm64", "python": "3.12.14", "passed": 665, "skipped": 0, "warnings": 2},
+  "native_linux": {"system": "Linux", "machine": "aarch64", "python": "3.12.3", "checks_passed": 53},
+  "independent_app": {"exact_distributions": 20, "checks_passed": 8, "authenticated_login_proof_alone": false},
+  "oci": {"system": "Linux", "machine": "aarch64", "functional_checks": 24, "container_checks": 9, "image_python": "3.12.15", "guest_controller_python": "3.12.3"},
+  "private_archive_sha256": {"evaluation": "26fb0dab0a4ea64f96b97c2982f6472ef61f0ff9c6ad92e31feac0d816d73ca9", "application": "b7f6f40f6cdb583618513155e4069c84e6d379cfd431292b5f58bea933c6d354"}
+}

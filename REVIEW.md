@@ -1,0 +1,9 @@
+# Review and partnership requests / Review- und Partneranfragen
+
+After repository setup, use the non-confidential issue forms for questions, feedback, review requests or partnership interest. Describe your integration, desired review scope and relevant expertise without customer details, personal data, secrets, source excerpts or sensitive findings. No email or private-message feature is requested. No live channel currently exists by this preparation alone.
+
+Leo de Matos must individually approve each private review. A request grants no code access. Scope, confidentiality, permitted evaluation, retention/deletion, disclosure, liability and permanent business use need separate agreement and professional review. Access should be limited and removable; a specific private channel is granted separately. No SLA or automatic support is offered. Use [security policy](SECURITY.md) for sensitive findings.
+
+Nach Repository-Einrichtung die nicht vertraulichen Issue-Formulare für Fragen, Feedback, Review-Anfragen oder Partnerinteresse nutzen. Integration, gewünschten Review-Umfang und Erfahrung ohne Kundendetails, personenbezogene Daten, Geheimnisse, Quellauszüge oder sensible Befunde beschreiben. E-Mail oder private Nachrichtenfunktion werden nicht verlangt. Diese Vorbereitung allein schafft keinen aktiven Kanal.
+
+Leo de Matos muss jedes private Review individuell freigeben. Eine Anfrage gewährt keinen Codezugang. Umfang, Vertraulichkeit, erlaubte Evaluation, Aufbewahrung/Löschung, Offenlegung, Haftung und dauerhafte Geschäftsnutzung brauchen separate Vereinbarung und professionelle Prüfung. Zugang soll begrenzt und entziehbar sein; ein konkreter privater Kanal wird separat gewährt. Kein SLA oder automatischer Support. Sensible Befunde richten sich nach der [Sicherheitsrichtlinie](SECURITY.md).
