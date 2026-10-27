@@ -25,6 +25,12 @@ FILES = tuple(sorted([
     '.github/ISSUE_TEMPLATE/partnership.yml', '.github/workflows/documentation.yml',
     'tools/check_public.py',
 ]))
+# Only these two canonical, non-confidential project contact destinations may
+# leave the exported tree. Queries, fragments and all other URLs stay rejected.
+PUBLIC_CONTACT_LINKS = frozenset({
+    'https://github.com/ripitship/pas-privacy-access-system/issues',
+    'https://github.com/ripitship/pas-privacy-access-system/issues/new/choose',
+})
 WORKFLOW = '''name: Documentation only
 on: [push, pull_request]
 permissions:
@@ -130,6 +136,8 @@ def validate(root, require_inventory=True, repository=False):
     for name, text in contents.items():
         if name.endswith('.md'):
             for raw in re.findall(r'!?\[[^\]]*\]\(([^)]+)\)', text):
+                if raw in PUBLIC_CONTACT_LINKS:
+                    continue
                 target = urlsplit(raw)
                 if target.scheme or target.netloc or target.query:
                     fail('nonlocal link rejected', name); continue
