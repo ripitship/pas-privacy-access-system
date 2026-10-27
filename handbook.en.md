@@ -22,6 +22,17 @@ The archival sample App is a separate consumer without PAS server code. It is an
 
 This is a synthetic paper walkthrough, not an executable demonstration or real customer story. A fictitious operator connects an internal portal and a partner application. A synthetic user receives separate application-specific subjects. The operator checks the business identity and binds the partner subject to a local reader role. Login plus current entitlement plus that binding permits reading; editing stays denied. Removing the binding denies the next protected operation. Revocation or an unavailable Core also denies access. Recovery invalidates prior sessions and proofs while stable application mappings must remain correctly bound. Private reviewers should reproduce these decisions with synthetic state only.
 
+| Step | What happens in the example | Boundary to challenge |
+|---|---|---|
+| 1. Entitlement | The operator issues a possession-based proof to a synthetic participant. | Entitlement is not proof of civil identity. |
+| 2. Activation | The participant follows the designated PAS activation and login setup, without mandatory email. | Personal proofs stay in PAS flows, not in portal scripts. |
+| 3. Application access | The portal receives an application-specific subject and checks local identity/role binding plus current entitlement. | Successful authentication alone grants no business role. |
+| 4. Restricted operation | Reading is permitted for the synthetic reader; editing is denied. | The application owns its business authorisation. |
+| 5. Revocation or outage | Removing the binding, revoking entitlement or losing Core availability denies the next protected action. | Fail-closed behaviour trades availability for the access boundary. |
+| 6. Lost credentials | Recovery follows the configured profile and independent-proof requirements; existing sessions/proofs are invalidated. | A code alone must not become an undocumented universal reset. Total loss can remain unrecoverable. |
+
+This table is a guided explanation of the intended/reference flow, not a new execution result. [Choose a review question](REVIEW.md#three-starting-questions).
+
 ## Recovery
 
 ![Recovery limits](figures/recovery.en.svg)

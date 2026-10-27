@@ -24,6 +24,8 @@ Near-term goals: constructive developer/security feedback, focused individually 
 
 ## Changelog
 
+2026-10-27: clearer problem-first EN/DE entry, five-minute reading path, explicit review questions and a guided synthetic walkthrough. Ordinary feedback is separated from individually approved source review. Two exact project issue URLs are allowed by the documentation checker; other external links remain rejected. The 28-file boundary, software version, historical evidence and private-source decision are unchanged. Outreach or discussion activity is not evidence of production readiness or customer demand.
+
 2026-10-26 (documentation launch): this documentation repository is public. Its 28-file documentation-only boundary was checked, and the public project page was verified while signed out. GitHub private vulnerability reporting is enabled and its public reporting entry is visible; no test report was submitted. Ordinary questions use the four issue forms. The PAS Core source, runtime state and private review material remain excluded. No software release, license change, new PAS software tests or production approval accompanies this documentation launch.
 
 2026-10-26 (presentation update): positioned explicitly as a personal development project seeking technical feedback, not a commercial offer. GitHub contact routes and source-access limits clarified. No source publication, license change, new PAS software tests or legal exemption is asserted. Actual repository visibility and reporting availability are shown by GitHub, not inferred from this changelog.

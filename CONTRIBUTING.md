@@ -1,8 +1,12 @@
 # Contributing / Beiträge
 
-This personal development project welcomes constructive technical questions and documentation feedback. It is not a commercial support programme. Issues are the initial non-confidential contact route; their contents are visible to everyone once the repository is public. Possible future collaboration is exploratory and grants no software or source access.
+## A small first contribution / Ein kleiner erster Beitrag
 
-Dieses persönliche Entwicklungsprojekt begrüßt konstruktive fachliche Fragen und Dokumentationsfeedback. Es ist kein kommerzielles Supportprogramm. Issues sind der erste nicht vertrauliche Kontaktweg; ihre Inhalte sind bei öffentlichem Repository für alle sichtbar. Mögliche spätere Zusammenarbeit ist ergebnisoffen und gewährt keinen Software- oder Quellzugang.
+One clear objection, a confusing sentence or a missing integration requirement is a useful contribution. You do not need to review the whole system, disclose your employer or request source access. Start with [three review questions](REVIEW.md#three-starting-questions) or [ask your own](https://github.com/ripitship/pas-privacy-access-system/issues/new/choose). Ordinary non-confidential feedback needs no private-review agreement. It remains a public comment, not a confidential consultation or an automatic rights transfer.
+
+Ein klarer Einwand, ein unverständlicher Satz oder eine fehlende Integrationsanforderung ist ein hilfreicher Beitrag. Niemand muss das ganze System prüfen, seinen Arbeitgeber nennen oder Quellzugang anfragen. Einstieg: [drei Review-Fragen](REVIEW.md#drei-einstiegsfragen) oder [eigene Frage](https://github.com/ripitship/pas-privacy-access-system/issues/new/choose). Normales nicht vertrauliches Feedback braucht keine private Review-Vereinbarung. Es bleibt ein öffentlicher Kommentar, keine vertrauliche Beratung oder automatische Rechteübertragung.
+
+## Documentation changes / Dokumentationsänderungen
 
 Non-confidential questions and documentation feedback are welcome through issues after setup. Check the [rights notice](NOTICE.md), [review process](REVIEW.md) and [security policy](SECURITY.md). Propose a documentation scope before submitting content; do not submit PAS source, runtime artifacts, customer data, secrets or material without cleared contribution rights. No software contribution license or rights transfer is implied. Changes must preserve equivalent English/German facts. After manual review, refresh hashes with `python3 tools/check_public.py . --repository --refresh-inventory`; validate with `python3 tools/check_public.py . --repository`. Repository mode permits only the root Git metadata directory; exported trees use strict mode without this flag. CI validates documentation only. A maintainer reviews all changes manually; automation does not publish.
 

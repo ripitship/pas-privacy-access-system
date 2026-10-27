@@ -1,23 +1,47 @@
 # PAS · Privacy Access System
 
-[English](README.md) · [Technischer Leitfaden](handbook.de.md) · [Nachweise](evidence.de.md) · [FAQ und Roadmap](FAQ.de.md)
+[English](README.md) · [Architektur](handbook.de.md#architektur) · [Am Review teilnehmen](https://github.com/ripitship/pas-privacy-access-system/issues)
 
-Dokumentation vorbereitet am 23.10.2026; Vorstellung als persönliches Projekt aktualisiert am 26.10.2026. Software 0.8.0 · API v1 · Schema 6 · `production_ready=false`.
+**Können Zugang und Wiederherstellung funktionieren, ohne E-Mail zur Pflichtgrundlage zu machen?** PAS untersucht einen besitzbasierten Berechtigungsnachweis mit einer nutzerfreundlichen Login-Schicht darüber und Wiederherstellungsregeln unter Kontrolle des jeweiligen Betreibers.
 
-**Ein persönliches Entwicklungsprojekt von Leo de Matos, das konstruktives fachliches Feedback sucht.** Dieses Repository stellt Grundidee, Architektur, historische interne Ergebnisse und offene Fragen vor. Es ist kein kommerzielles Softwareangebot, unterstützter Produktstart oder Open-Source-Release des PAS-Kerns. Mögliche spätere Zusammenarbeit wird bei tatsächlichem Interesse gesondert betrachtet.
+Persönliches Entwicklungsprojekt von Leo de Matos. **Prototyp, nicht produktionsreif.** Der PAS-Kerncode bleibt privat; dieses öffentliche Repository dient Architekturdiskussion und Dokumentationsfeedback, nicht als ausführbare PAS-Veröffentlichung.
 
-PAS untersucht Berechtigungen, Zugang und Recovery unter Kontrolle des jeweiligen Betreibers, ohne Pflicht-E-Mail oder obligatorisches Hersteller-Identitätskonto. Ausgangspunkt ist ein besitzbasierter Berechtigungsnachweis mit einer nutzerfreundlichen Konto-/Login-Schicht darüber und kontrollierter Wiederherstellung bei verlorenen Zugangsdaten. Entwickler, Security-Fachleute und interessierte Leser sind eingeladen, den Entwurf und seine praktischen Grenzen kritisch zu prüfen. DE/EU-first ist ein Betriebsziel, das für jede tatsächliche Bereitstellung belegt werden muss, keine durch dieses Repository erwiesene Zertifizierung.
+## Warum untersuchen wir das?
 
-Eine typische Evaluation folgt einem ausgegebenen Berechtigungsnachweis über Aktivierung, bequemen Login und eine geschützte Anwendungsaktion bis zu kontrollierter Recovery oder Widerruf. Gesucht ist Feedback zu diesem Integrationsablauf, Identitäts-/Rollengrenzen, Recovery-Risiken und betrieblicher Eignung. [Synthetischen Ablauf verfolgen](handbook.de.md#illustrativer-ablauf).
+Der Entwurf trennt drei Fragen: **Bist du berechtigt? Wie meldest du dich an? In welcher Identität und Rolle darfst du in dieser Anwendung handeln?** Nicht jeder Dienst braucht dafür eine E-Mail-Adresse. Manche benötigen trotzdem eine geprüfte geschäftliche Identität; diese Zuordnung und ihre Rollen muss die Anwendung ausdrücklich herstellen.
+
+Der vorgesehene Betreiber kontrolliert Hosting, Schlüssel, Recovery-Regeln, Identitätszuordnung und Update-Freigabe. DE/EU-first ist ein Betriebsziel, keine Zertifizierung oder durch GitHub-Dokumentation bewiesene Unabhängigkeit. GitHub ist kein erforderlicher PAS-Identitätsdienst im Betrieb.
+
+## Einstieg in fünf Minuten
+
+- [Einen synthetischen Zugangs- und Recovery-Ablauf verfolgen](handbook.de.md#illustrativer-ablauf). Zum Lesen braucht es weder Installation noch PAS-Konto.
+- [Vertrauensgrenzen und Integrationsvertrag ansehen](handbook.de.md#architektur).
+- [Eine Review-Frage auswählen](REVIEW.md#drei-einstiegsfragen) und [mitdiskutieren](https://github.com/ripitship/pas-privacy-access-system/issues). Ein kurzer, konkreter Einwand hilft; niemand muss das ganze Projekt prüfen.
+
+## So greifen die Ebenen ineinander
 
 ![Zugangsgrenzen](figures/boundaries.de.svg)
 
-Login authentisiert den Zugang; Core verwaltet Berechtigungen und Recovery; eine Anwendung ordnet einen anwendungsspezifischen Subject ihrer eigenen Identität und ihren Rollen zu. Codebesitz identifiziert keine reale Person. Das Portal erhält keine persönlichen C/A/R-Nachweise. [Architektur und synthetischen Ablauf ansehen](handbook.de.md#architektur).
+Login authentisiert den Zugang; Core verwaltet Berechtigungen und Recovery; eine Anwendung ordnet einen anwendungsspezifischen Subject ihrer eigenen Identität und ihren Rollen zu. Codebesitz identifiziert keine reale Person. Das Portal erhält keine persönlichen C/A/R-Nachweise. [Architektur ansehen](handbook.de.md#architektur).
 
-Dies ist das Dokumentations- und technische Review-Repository für PAS unter `ripitship/pas-privacy-access-system`. Die tatsächliche Sichtbarkeit zeigt GitHub mit dem Kennzeichen Public/Private an. Für nicht vertrauliche Fragen, Feedback oder Review-Anfragen **Issues → New issue** verwenden, sobald Zugang besteht. Bei öffentlichem Repository sind diese Issues für alle sichtbar; GitHub bietet keinen allgemeinen privaten Nachrichteneingang. Sensible Befunde gehören ausschließlich in den unter [SECURITY.md](SECURITY.md) beschriebenen vertraulichen Weg, niemals in öffentliche Issues. Review-Anfragen brauchen eine individuelle Freigabe und gewähren keinen Quellzugang. Eine separate öffentliche Projekt-E-Mail wird derzeit nicht angegeben.
+## Hilf uns, den Entwurf kritisch zu prüfen
 
-Der vollständige PAS-Quellcode bleibt privat. Dieses Repository enthält Dokumentation, synthetische Grafiken und einen eigenständigen Dokumentationsprüfer, keine PAS-Laufzeitsoftware oder ausführbare Demo. Eine private Evaluation braucht gesonderte Freigabe und vereinbarte Bedingungen; Kauf, geschäftliche Nutzungsfreigabe oder Supportvertrag werden hier nicht angeboten. [Veröffentlichungs- und Rechtehinweis](NOTICE.md).
+1. **Identitätsgrenze:** Wo benötigt deine Anwendung eine reale Identität statt eines Berechtigungsnachweises?
+2. **Recovery:** Welche Verlustfälle sollten eine Wiederherstellung ausschließen, statt einen Reset zuzulassen?
+3. **Integration:** Welche Protokolle, Rollenzuordnungen und Betriebsnachweise brauchst du vor einer begleiteten Evaluation?
 
-Leo de Matos ist Projektinitiator und vorgesehener Projektkontakt. Diese Zuordnung belegt keine alleinige Urheberschaft oder Rechteinhaberschaft an sämtlicher Software sowie fremden oder KI-unterstützten Materialien. Kontakt-SLA oder automatischer Support werden nicht zugesagt.
+[Bestehende Fragen diskutieren](https://github.com/ripitship/pas-privacy-access-system/issues) oder [eine eigene stellen](https://github.com/ripitship/pas-privacy-access-system/issues/new/choose). Bitte allgemeine oder synthetische Beispiele nutzen. Normale Fragen brauchen keine private Review-Vereinbarung. Sensible Befunde richten sich nach [SECURITY.md](SECURITY.md), niemals nach öffentlichen Kommentaren.
 
-Einstieg: [Integration und Risiken](handbook.de.md#integration), [datierte interne Nachweise](evidence.de.md), dann [privates Review anfragen](REVIEW.md). Sensible Befunde richten sich nach [SECURITY.md](SECURITY.md).
+## Was ist belegt, und was noch nicht?
+
+Software 0.8.0 · API v1 · Schema 6 · `production_ready=false`. Historische interne Softwareergebnisse stammen vom 06.10.2026; aktuelle GitHub-Prüfungen betreffen nur die Dokumentation. Sie sind kein unabhängiges Sicherheitsaudit. [Nachweise und Reproduzierbarkeitsgrenzen](evidence.de.md).
+
+Gemeinsamer Diebstahl von Besitz- und Recovery-Nachweisen ist ein benanntes P0-Risiko. Totalverlust lässt sich ohne zulässigen unabhängigen Nachweis nicht sicher wiederherstellen. Höhere Recovery-Absicherung braucht tatsächliche Passkey-, Guardian-, Warnungs- und Schlüsselisolationsvorkehrungen; P2 bleibt gesperrt. Vollständige Anonymität, universelle Plattformkompatibilität oder Produktionsfreigabe werden nicht behauptet. [Recovery- und Betriebsgrenzen](handbook.de.md#recovery).
+
+## Quellcode, Mitwirkung und mögliche spätere Zusammenarbeit
+
+Der vollständige PAS-Quellcode bleibt privat. Dieses Repository enthält Dokumentation, synthetische Grafiken und einen eigenständigen Dokumentationsprüfer. Öffentliche Leser können den Entwurf kritisieren, aber die private PAS-Implementierung mit diesem Baum weder reproduzieren noch auditieren. Individuell freigegebene private Evaluationen brauchen gesonderten Umfang und vereinbarte Bedingungen. [Review-Ablauf](REVIEW.md) · [Mitwirkung](CONTRIBUTING.md).
+
+Wenn das Problem in deinem Arbeitsumfeld relevant ist, beschreibe den allgemeinen Ablauf und was eine brauchbare Lösung belegen müsste. Spätere Zusammenarbeit kann gesondert betrachtet werden; dieses persönliche Projekt ist kein kommerzielles Angebot oder Supportdienst. Leo de Matos ist Projektinitiator und Kontakt über GitHub. Zuordnung und Nutzungsgrenzen erläutert der [Rechtehinweis](NOTICE.md).
+
+Vorstellung aktualisiert am 27.10.2026. [FAQ und Entwicklungsroadmap](FAQ.de.md).

@@ -22,6 +22,17 @@ Die historische Beispiel-App ist ein separater Consumer ohne PAS-Servercode. Sie
 
 Dies ist ein synthetischer Papierablauf, keine ausführbare Demonstration oder echte Kundengeschichte. Ein erfundener Betreiber verbindet ein internes Portal und eine Partneranwendung. Ein synthetischer Nutzer erhält getrennte anwendungsspezifische Subjects. Der Betreiber prüft die fachliche Identität und bindet den Partner-Subject an eine lokale Leserrolle. Login, aktuelle Berechtigung und diese Bindung erlauben Lesen; Bearbeiten bleibt gesperrt. Entfernen der Bindung sperrt die nächste geschützte Aktion. Widerruf oder unerreichbarer Core sperren ebenfalls. Recovery entwertet frühere Sitzungen und Nachweise; stabile Anwendungszuordnungen müssen korrekt gebunden bleiben. Private Reviewer sollen diese Entscheidungen ausschließlich mit synthetischem Zustand reproduzieren.
 
+| Schritt | Was im Beispiel passiert | Kritisch zu prüfende Grenze |
+|---|---|---|
+| 1. Berechtigung | Der Betreiber gibt einen besitzbasierten Nachweis an einen synthetischen Teilnehmer aus. | Berechtigung ist kein Nachweis der bürgerlichen Identität. |
+| 2. Aktivierung | Der Teilnehmer folgt der vorgesehenen PAS-Aktivierung und Login-Einrichtung, ohne Pflicht-E-Mail. | Persönliche Nachweise bleiben in PAS-Abläufen, nicht in Portal-Skripten. |
+| 3. Anwendungszugang | Das Portal erhält einen anwendungsspezifischen Subject und prüft lokale Identitäts-/Rollenbindung sowie aktuelle Berechtigung. | Erfolgreiche Authentisierung allein gewährt keine fachliche Rolle. |
+| 4. Begrenzte Aktion | Lesen ist für die synthetische Leserrolle erlaubt; Bearbeiten bleibt gesperrt. | Die Anwendung verantwortet ihre fachliche Autorisierung. |
+| 5. Widerruf oder Ausfall | Entfernte Bindung, widerrufene Berechtigung oder unerreichbarer Core sperren die nächste geschützte Aktion. | Fail-closed schützt die Zugangsgrenze zulasten der Verfügbarkeit. |
+| 6. Verlorene Zugangsdaten | Recovery folgt dem konfigurierten Profil und unabhängigen Nachweisanforderungen; bestehende Sitzungen/Nachweise werden entwertet. | Ein Code allein darf kein undokumentierter Universalreset werden. Totalverlust kann nicht wiederherstellbar bleiben. |
+
+Diese Tabelle erklärt den vorgesehenen Referenzablauf, sie ist kein neues Ausführungsergebnis. [Eine Review-Frage auswählen](REVIEW.md#drei-einstiegsfragen).
+
 ## Recovery
 
 ![Recovery-Grenzen](figures/recovery.de.svg)

@@ -24,6 +24,8 @@ Nächste Ziele: konstruktives Entwickler-/Security-Feedback, fokussierte individ
 
 ## Änderungsstand
 
+27.10.2026: verständlicher problemorientierter EN/DE-Einstieg, Fünf-Minuten-Lesepfad, ausdrückliche Review-Fragen und geführter synthetischer Ablauf. Normales Feedback ist von einzeln freigegebenem Quellcode-Review getrennt. Der Dokumentationsprüfer erlaubt zwei exakt festgelegte Projekt-Issue-URLs; andere externe Links bleiben abgewiesen. Die 28-Dateien-Grenze, Softwareversion, historischen Nachweise und Entscheidung zum privaten Kerncode bleiben unverändert. Ansprache oder Diskussion sind kein Beleg für Produktionsreife oder Kundennachfrage.
+
 26.10.2026 (Dokumentationsstart): Dieses Dokumentationsrepository ist öffentlich. Die auf 28 Dateien begrenzte Dokumentationsfreigabe wurde geprüft; die Projektseite war ohne Anmeldung erreichbar. Private Schwachstellenmeldung über GitHub ist aktiviert und der öffentliche Einstieg sichtbar; keine Testmeldung wurde abgeschickt. Normale Fragen nutzen die vier Issue-Formulare. PAS-Kerncode, Laufzeitdaten und private Review-Unterlagen bleiben ausgeschlossen. Dieser Dokumentationsstart umfasst keine Softwareveröffentlichung, Lizenzänderung, neuen PAS-Softwaretests oder Produktionsfreigabe.
 
 26.10.2026 (Vorstellungsupdate): ausdrücklich als persönliches Entwicklungsprojekt für fachliches Feedback eingeordnet, nicht als kommerzielles Angebot. GitHub-Kontaktwege und Grenzen des Quellzugangs präzisiert. Keine Quellveröffentlichung, Lizenzänderung, neuen PAS-Softwaretests oder rechtliche Ausnahme werden behauptet. Tatsächliche Repository-Sichtbarkeit und Verfügbarkeit des Meldewegs zeigt GitHub; sie folgen nicht aus diesem Änderungsstand.
