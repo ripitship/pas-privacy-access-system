@@ -24,6 +24,12 @@ The intended operator controls hosting, keys, recovery policy, identity mapping 
 
 Login authenticates access; Core manages entitlement and recovery; an application binds an application-specific subject to its own identity and roles. Possession of a code does not identify a real person. The portal does not receive personal C/A/R proofs. [Explore the architecture](handbook.en.md#architecture).
 
+## November evaluation
+
+On an activated account with a verified recipient binding, a separate offline signer authorizes the specific passkey registration. The guided Guardian setup requires both proof of possession from the Guardian and fresh user verification with the account holder's passkey. If the server response is lost, the panel checks the current binding and reports an uncertain outcome when it cannot confirm it.
+
+An authorized restore preserves durable recovery authority and invalidates existing sessions, pending recovery tickets and stored pending authorization requests and ceremonies. Eligible interrupted recoveries can resume with fresh proof from the original target key under the original quorum, warning and time requirements. [Current evaluation flows](handbook.en.md#november-evaluation-flows).
+
 ## Help us challenge the design
 
 1. **Identity boundary:** where would your application need a real identity rather than an entitlement proof?
@@ -34,7 +40,7 @@ Login authenticates access; Core manages entitlement and recovery; an applicatio
 
 ## What is established, and what is not?
 
-Software 0.8.0 · API v1 · schema 6 · `production_ready=false`. Historical internal software results are dated 2026-10-06; the current GitHub checks validate documentation only. They are not an independent security audit. [Evidence and reproducibility limits](evidence.en.md).
+Software 0.8.0 · API v1 · schema 6 · `production_ready=false`. The 23 November 2026 internal evaluation recorded 1,118 PAS tests passed and 14 skipped, 31 Node UI tests passed, and local Core and integration-lab checks of 21/21 and 24/24. The 6 October Linux results describe the older evaluation. GitHub CI checks this documentation. [Dated evidence and evaluation limits](evidence.en.md).
 
 Joint theft of the possession and recovery proofs is a stated P0 risk. Total loss cannot safely be recovered without admissible independent proof. Higher-assurance recovery depends on actual passkey, guardian, warning and key-isolation arrangements; P2 remains blocked. No complete anonymity, universal platform compatibility or production approval is claimed. [Recovery and deployment limits](handbook.en.md#recovery).
 
@@ -44,4 +50,4 @@ The complete PAS source stays private. This repository contains documentation, s
 
 If the problem matters in your work, describe the generic workflow and what a satisfactory solution would need to prove. Possible future collaboration can be considered separately; this personal project is not a commercial offer or support service. Leo de Matos is the project initiator and contact through GitHub. Attribution and reuse limits are explained in the [rights notice](NOTICE.md).
 
-Presentation updated on 2026-10-27. [FAQ and development roadmap](FAQ.en.md).
+Presentation dated 2026-11-24. [FAQ and development roadmap](FAQ.en.md).

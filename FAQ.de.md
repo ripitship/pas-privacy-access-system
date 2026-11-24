@@ -18,11 +18,15 @@ Gewährt eine Codeanfrage Zugang? Nein. Individuelle Freigabe, Bedingungen, Host
 
 Kann ich dieses Dokumentationsrepository ausführen? Es enthält Dokumentation und einen Dokumentationsprüfer mit der Python-Standardbibliothek, keine PAS-Software oder ausführbare Demo.
 
+Wie weit ist die November-Evaluation? Individuell freigegebene Reviewer können die Empfängerfreigabe per separatem Signer, die geführte Guardian-Bindung mit zwei Nachweisen und den geschützten Restore mit bedingter Recovery-Fortsetzung beurteilen. Kann die Oberfläche anhand einer frischen Statusabfrage nicht feststellen, ob die Bindung gespeichert wurde, zeigt sie das Ergebnis als unklar an. Physische Authenticator-Nutzung, tatsächliche Bindung und vollständige Recovery im Browser sowie unabhängige Schlüsselverwahrung stehen noch aus. [Datierte Nachweise](evidence.de.md).
+
 ## Roadmap
 
 Nächste Ziele: konstruktives Entwickler-/Security-Feedback, fokussierte individuell freigegebene Integrationsreviews, explizite Betreibernachweise und Bedrohungsmodellbewertung. Produktionsgates umfassen unabhängige Sicherheits-/SCA-Prüfung, Rechte-/Kontaktprüfung, tatsächliche Browser-/Authenticator-Abdeckung, isolierte Schlüssel-/Witness-Verwahrung, Restore/HA und Betriebsnachweise. P2 bleibt gesperrt. Das ist eine Entwicklungsroadmap, keine Produktverfügbarkeits-, Verkaufs- oder Supportzusage.
 
 ## Änderungsstand
+
+24.11.2026: zweisprachige Vorstellung für die kontrollierte interne Evaluation vom 23. November aktualisiert. Der Dokumentationsprüfer gleicht die November- und Oktobernachweise jeweils mit ihren fest hinterlegten Werten ab. Die Linux-Ergebnisse vom Oktober gelten für die damalige Evaluation. Der Einstieg zur privaten Schwachstellenmeldung war am 24. November ohne Anmeldung sichtbar.
 
 27.10.2026: verständlicher problemorientierter EN/DE-Einstieg, Fünf-Minuten-Lesepfad, ausdrückliche Review-Fragen und geführter synthetischer Ablauf. Normales Feedback ist von einzeln freigegebenem Quellcode-Review getrennt. Der Dokumentationsprüfer erlaubt zwei exakt festgelegte Projekt-Issue-URLs; andere externe Links bleiben abgewiesen. Die 28-Dateien-Grenze, Softwareversion, historischen Nachweise und Entscheidung zum privaten Kerncode bleiben unverändert. Ansprache oder Diskussion sind kein Beleg für Produktionsreife oder Kundennachfrage.
 

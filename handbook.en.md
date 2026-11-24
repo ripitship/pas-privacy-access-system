@@ -18,6 +18,18 @@ Integrators must verify recipient keys, registered clients, scopes, replay resis
 
 The archival sample App is a separate consumer without PAS server code. It is an integration reference, not universal SAP, Pega, IBM, Salesforce or n8n compatibility. Evaluate adapters individually. The native Linux App subprocesses shared the PAS interpreter; a separate App20 environment and OCI evidence cover different boundaries.
 
+## November evaluation flows
+
+**Recipient approval.** For a passkey registration on an activated, recipient-bound account, the browser prepares the specific registration and the recipient approves it with a purpose-bound offline signer. The recipient's private key and passphrase stay outside the browser.
+
+**Guardian setup.** A new Guardian binding requires a current, integrity-protected recipient binding, fresh passkey user verification by the account holder and proof that the Guardian controls the key involved in the same request. The interface guides request creation, full public-key fingerprint checks, import of the signed Guardian response and explicit account-holder confirmation. The server checks the binding prerequisites and limits the account to three distinct Guardian keys. Cancellation, expiration or a change of session context clears pending inputs. The Guardian keeps the private key and passphrase outside PAS and the browser.
+
+**Uncertain outcomes.** A lost or unreadable response can follow a committed binding. The interface checks the current status for the same account, version and fingerprint. If it cannot establish the outcome, it reports uncertainty. Ordering applies within a single page. Confirmed server changes persist.
+
+**Restore and resume.** An authorized restore of the latest protected state retains durable security state, including the recovery case and its evidence. It invalidates existing sessions, pending recovery tickets and stored pending authorization requests and ceremonies. An unused stateless login offer or recovery proposal may still be usable within its original authenticated time, version, origin and context bounds.
+
+Eligible recovery cases can resume with fresh proof from the original target key. A prepared case can receive a new confirmation packet. Interrupted credential re-enrollment can continue with a new restricted session. Prior session credentials stay invalid. The original Guardian quorum, separately signed warning receipt and deadlines still apply. A guided recovery wizard and independently verified key custody remain open.
+
 ## Illustrative walkthrough
 
 This is a synthetic paper walkthrough, not an executable demonstration or real customer story. A fictitious operator connects an internal portal and a partner application. A synthetic user receives separate application-specific subjects. The operator checks the business identity and binds the partner subject to a local reader role. Login plus current entitlement plus that binding permits reading; editing stays denied. Removing the binding denies the next protected operation. Revocation or an unavailable Core also denies access. Recovery invalidates prior sessions and proofs while stable application mappings must remain correctly bound. Private reviewers should reproduce these decisions with synthetic state only.

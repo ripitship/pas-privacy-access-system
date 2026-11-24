@@ -18,6 +18,18 @@ Integratoren müssen Empfängerschlüssel, registrierte Clients, Scopes, Replay-
 
 Die historische Beispiel-App ist ein separater Consumer ohne PAS-Servercode. Sie ist Integrationsreferenz, keine universelle SAP-, Pega-, IBM-, Salesforce- oder n8n-Kompatibilität. Adapter sind einzeln zu bewerten. Native Linux-App-Kindprozesse teilten den PAS-Interpreter; separate App20- und OCI-Nachweise decken andere Grenzen ab.
 
+## Aktuelle Evaluationsabläufe
+
+**Empfängerfreigabe.** Für die Passkey-Registrierung in einem aktivierten, empfängergebundenen Konto bereitet der Browser die konkrete Registrierung vor. Der Empfänger gibt sie mit einem zweckgebundenen Offline-Signer frei. Sein privater Schlüssel und seine Passphrase bleiben außerhalb des Browsers.
+
+**Guardian-Einrichtung.** Eine neue Guardian-Bindung verlangt eine aktuelle, integritätsgeschützte Empfängerbindung, frische Nutzerverifikation per Passkey des Kontoinhabers und einen Besitznachweis des Guardians für den Schlüssel aus demselben Auftrag. Die Oberfläche führt durch Auftragserstellung, Vergleich des vollständigen öffentlichen Schlüsselfingerabdrucks, Import der signierten Antwort und ausdrückliche Bestätigung durch den Kontoinhaber. Der Server prüft die Voraussetzungen und begrenzt das Konto auf drei unterschiedliche Guardian-Schlüssel. Abbruch, Ablauf oder ein Wechsel des Sitzungskontexts verwerfen wartende Eingaben. Privater Schlüssel und Passphrase des Guardians bleiben außerhalb von PAS und Browser.
+
+**Unklares Ergebnis.** Die Bindung kann bereits gespeichert sein, wenn die Serverantwort verloren geht oder unlesbar ist. Die Oberfläche prüft dann den aktuellen Status für dasselbe Konto, dieselbe Version und denselben Fingerabdruck. Kann sie das Ergebnis nicht feststellen, zeigt sie es als unklar an. Die Reihenfolge von Anfragen wird innerhalb einer Seite gesteuert. Bestätigte Serveränderungen bleiben bestehen.
+
+**Restore und Fortsetzung.** Ein autorisierter Restore des neuesten geschützten Stands erhält den dauerhaften Sicherheitszustand einschließlich Recovery-Fall und seiner Nachweise. Er entwertet bestehende Sitzungen, ausstehende Recovery-Tickets und gespeicherte offene Autorisierungsanfragen und Ceremonies. Ein ungenutztes zustandsloses Login-Angebot oder eine ungenutzte zustandslose Recovery-Anfrage kann innerhalb der ursprünglich authentisierten Grenzen für Zeit, Version, Origin und Kontext weiterhin nutzbar sein.
+
+Geeignete Recovery-Fälle lassen sich mit frischem Nachweis des ursprünglichen Zielschlüssels fortsetzen. Ein vorbereiteter Fall kann ein neues Bestätigungspaket erhalten. Die unterbrochene Neueinrichtung der Zugangsdaten im Recovery-Fall kann mit einer neuen eingeschränkten Sitzung fortgesetzt werden. Frühere Sitzungsnachweise bleiben ungültig. Das ursprüngliche Guardian-Quorum, die separat signierte Warnquittung und die Fristen gelten weiter. Ein geführter Recovery-Assistent und unabhängig geprüfte Schlüsselverwahrung stehen noch aus.
+
 ## Illustrativer Ablauf
 
 Dies ist ein synthetischer Papierablauf, keine ausführbare Demonstration oder echte Kundengeschichte. Ein erfundener Betreiber verbindet ein internes Portal und eine Partneranwendung. Ein synthetischer Nutzer erhält getrennte anwendungsspezifische Subjects. Der Betreiber prüft die fachliche Identität und bindet den Partner-Subject an eine lokale Leserrolle. Login, aktuelle Berechtigung und diese Bindung erlauben Lesen; Bearbeiten bleibt gesperrt. Entfernen der Bindung sperrt die nächste geschützte Aktion. Widerruf oder unerreichbarer Core sperren ebenfalls. Recovery entwertet frühere Sitzungen und Nachweise; stabile Anwendungszuordnungen müssen korrekt gebunden bleiben. Private Reviewer sollen diese Entscheidungen ausschließlich mit synthetischem Zustand reproduzieren.

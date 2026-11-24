@@ -24,6 +24,12 @@ Der vorgesehene Betreiber kontrolliert Hosting, Schlüssel, Recovery-Regeln, Ide
 
 Login authentisiert den Zugang; Core verwaltet Berechtigungen und Recovery; eine Anwendung ordnet einen anwendungsspezifischen Subject ihrer eigenen Identität und ihren Rollen zu. Codebesitz identifiziert keine reale Person. Das Portal erhält keine persönlichen C/A/R-Nachweise. [Architektur ansehen](handbook.de.md#architektur).
 
+## Evaluation im November
+
+Für ein aktiviertes Konto mit geprüfter Empfängerbindung gibt ein separater Offline-Signer die konkrete Passkey-Registrierung frei. Die geführte Guardian-Einrichtung verlangt sowohl den Besitznachweis des Guardians als auch eine frische Nutzerverifikation mit dem Passkey des Kontoinhabers. Geht die Serverantwort verloren, prüft die Oberfläche die aktuelle Bindung. Kann sie die Bindung nicht bestätigen, zeigt sie das Ergebnis als unklar an.
+
+Ein autorisierter Restore erhält die dauerhafte Recovery-Autorität. Er entwertet bestehende Sitzungen, ausstehende Recovery-Tickets und gespeicherte offene Autorisierungsanfragen und Ceremonies. Geeignete unterbrochene Recovery-Fälle lassen sich mit frischem Nachweis des ursprünglichen Zielschlüssels unter den ursprünglichen Quorum-, Warn- und Fristregeln fortsetzen. [Aktuelle Evaluationsabläufe](handbook.de.md#aktuelle-evaluationsabläufe).
+
 ## Hilf uns, den Entwurf kritisch zu prüfen
 
 1. **Identitätsgrenze:** Wo benötigt deine Anwendung eine reale Identität statt eines Berechtigungsnachweises?
@@ -34,7 +40,7 @@ Login authentisiert den Zugang; Core verwaltet Berechtigungen und Recovery; eine
 
 ## Was ist belegt, und was noch nicht?
 
-Software 0.8.0 · API v1 · Schema 6 · `production_ready=false`. Historische interne Softwareergebnisse stammen vom 06.10.2026; aktuelle GitHub-Prüfungen betreffen nur die Dokumentation. Sie sind kein unabhängiges Sicherheitsaudit. [Nachweise und Reproduzierbarkeitsgrenzen](evidence.de.md).
+Software 0.8.0 · API v1 · Schema 6 · `production_ready=false`. In der internen Evaluation am 23. November 2026 bestanden 1.118 PAS-Tests bei 14 übersprungenen Fällen, 31 Node-Oberflächentests sowie 21/21 lokale Core-Prüfungen und 24/24 Prüfungen im Integrationslabor. Die Linux-Ergebnisse vom 6. Oktober beziehen sich auf die ältere Evaluation. Die GitHub-CI prüft diese Dokumentation. [Datierte Nachweise und Evaluationsgrenzen](evidence.de.md).
 
 Gemeinsamer Diebstahl von Besitz- und Recovery-Nachweisen ist ein benanntes P0-Risiko. Totalverlust lässt sich ohne zulässigen unabhängigen Nachweis nicht sicher wiederherstellen. Höhere Recovery-Absicherung braucht tatsächliche Passkey-, Guardian-, Warnungs- und Schlüsselisolationsvorkehrungen; P2 bleibt gesperrt. Vollständige Anonymität, universelle Plattformkompatibilität oder Produktionsfreigabe werden nicht behauptet. [Recovery- und Betriebsgrenzen](handbook.de.md#recovery).
 
@@ -44,4 +50,4 @@ Der vollständige PAS-Quellcode bleibt privat. Dieses Repository enthält Dokume
 
 Wenn das Problem in deinem Arbeitsumfeld relevant ist, beschreibe den allgemeinen Ablauf und was eine brauchbare Lösung belegen müsste. Spätere Zusammenarbeit kann gesondert betrachtet werden; dieses persönliche Projekt ist kein kommerzielles Angebot oder Supportdienst. Leo de Matos ist Projektinitiator und Kontakt über GitHub. Zuordnung und Nutzungsgrenzen erläutert der [Rechtehinweis](NOTICE.md).
 
-Vorstellung aktualisiert am 27.10.2026. [FAQ und Entwicklungsroadmap](FAQ.de.md).
+Stand der Vorstellung: 24. November 2026. [FAQ und Entwicklungsroadmap](FAQ.de.md).

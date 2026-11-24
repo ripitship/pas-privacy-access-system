@@ -18,11 +18,15 @@ Does asking for code grant access? No. Individual approval, terms, hosting choic
 
 Can I run this documentation repository? It contains documentation and a Python standard-library documentation checker, not PAS software or an executable demo.
 
+How far is the November evaluation? Individually approved reviewers can assess recipient approval by a separate signer, guided Guardian binding with two proofs, and protected restore with conditional recovery resumption. The Guardian panel reports an uncertain outcome when a fresh status read cannot establish whether the binding took effect. Physical authenticator use, live browser binding, complete browser recovery and independent key custody remain open. [Dated evidence](evidence.en.md).
+
 ## Roadmap
 
 Near-term goals: constructive developer/security feedback, focused individually approved integration reviews, explicit operator evidence and threat-model assessment. Production gates include independent security/SCA review, rights/contact assessment, actual browser/authenticator coverage, isolated key/witness custody, restore/HA and deployment evidence. P2 stays blocked. This is a development roadmap, not a product availability, sales or support commitment.
 
 ## Changelog
+
+2026-11-24: refreshed the bilingual presentation for the 23 November controlled internal evaluation. The documentation checker pins the November and October evidence separately. The October Linux results identify their original evaluation only. The private reporting entry was visible during a signed-out check on 24 November.
 
 2026-10-27: clearer problem-first EN/DE entry, five-minute reading path, explicit review questions and a guided synthetic walkthrough. Ordinary feedback is separated from individually approved source review. Two exact project issue URLs are allowed by the documentation checker; other external links remain rejected. The 28-file boundary, software version, historical evidence and private-source decision are unchanged. Outreach or discussion activity is not evidence of production readiness or customer demand.
 
