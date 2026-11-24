@@ -57,6 +57,38 @@ EXPECTED_EVIDENCE = {
     'private_archive_sha256': {'evaluation': '26fb0dab0a4ea64f96b97c2982f6472ef61f0ff9c6ad92e31feac0d816d73ca9', 'application': 'b7f6f40f6cdb583618513155e4069c84e6d379cfd431292b5f58bea933c6d354'},
 }
 
+EXPECTED_CURRENT_EVALUATION = {'date': '2026-11-23',
+ 'classification': 'controlled internal evaluation; sanitized projection',
+ 'software_version': '0.8.0',
+ 'api': 'v1',
+ 'schema': 6,
+ 'production_ready': False,
+ 'hardware_verified': False,
+ 'p2_available': False,
+ 'regression': {'passed': 1118,
+                'skipped': 14,
+                'failures': 0,
+                'errors': 0,
+                'dependency_warnings': 2},
+ 'node_ui_passed': 31,
+ 'new_http_cases_in_regression': 3,
+ 'counts_overlap': True,
+ 'native_loopback': {'core': {'passed': 21, 'total': 21},
+                     'integration_lab': {'passed': 24, 'total': 24}},
+ 'browser_observation': {'synthetic_data_only': True,
+                         'observed': ['standard login',
+                                      'guardian status',
+                                      'keyboard focus',
+                                      'logout'],
+                         'mobile_width_px': 390,
+                         'no_horizontal_overflow': True,
+                         'physical_authenticator_verified': False,
+                         'live_browser_guardian_binding_verified': False,
+                         'full_browser_recovery_verified': False},
+ 'review': {'internal': True, 'ai_assisted': True, 'external_audit': False},
+ 'source_files_verified': 111,
+ 'pas_tests_rerun_for_documentation_refresh': False}
+
 def digest(path):
     return hashlib.sha256(path.read_bytes()).hexdigest()
 
@@ -69,6 +101,13 @@ def write_inventory(root):
 def slug(text):
     return ''.join(c for c in text.lower().replace(' ', '-')
                    if c in '-_' or unicodedata.category(c)[0] in 'LN')
+
+def unique_json_object(pairs):
+    result = dict(pairs)
+    if len(result) != len(pairs):
+        raise ValueError('duplicate member in evidence JSON')
+    return result
+
 
 def validate(root, require_inventory=True, repository=False):
     root = Path(root)
@@ -129,8 +168,14 @@ def validate(root, require_inventory=True, repository=False):
     if contents['.github/workflows/documentation.yml'] != WORKFLOW:
         fail('workflow differs from least-privilege approved policy', '.github/workflows/documentation.yml')
     try:
-        if json.loads(contents['evidence.json']) != EXPECTED_EVIDENCE:
+        evidence = json.loads(contents['evidence.json'], object_pairs_hook=unique_json_object)
+        if not isinstance(evidence, dict):
+            raise ValueError('evidence object required')
+        current = evidence.pop('current_evaluation', None)
+        if json.dumps(evidence, sort_keys=True) != json.dumps(EXPECTED_EVIDENCE, sort_keys=True):
             fail('archival evidence changed', 'evidence.json')
+        if json.dumps(current, sort_keys=True) != json.dumps(EXPECTED_CURRENT_EVALUATION, sort_keys=True):
+            fail('current evaluation evidence changed', 'evidence.json')
     except ValueError:
         fail('invalid evidence JSON', 'evidence.json')
     for name, text in contents.items():

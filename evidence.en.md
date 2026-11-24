@@ -2,7 +2,24 @@
 
 [Home](README.md) · [Deutsch](evidence.de.md) · [Machine-readable projection](evidence.json)
 
-All software results below are historical internal results dated 2026-10-06, not PAS tests rerun for this documentation preparation on 2026-10-23. They concern software 0.8.0, API v1, schema 6, `production_ready=false`. They are not an external audit, production certification, hardware approval or manufacturer identity attestation.
+## Controlled internal evaluation · 23 November 2026
+
+Software 0.8.0 · API v1 · schema 6 · `production_ready=false`. The 24 November documentation refresh checked the retained results and all 111 files in the frozen source manifest. The reported PAS runs took place on 23 November.
+
+| Scope | Recorded result |
+| --- | --- |
+| Full PAS suite | 1,118 passed, 14 skipped, 0 failures or errors, 2 existing dependency warnings |
+| Node UI behavior | 31 passed |
+| New HTTP integration cases | 3 passed within the full PAS suite |
+| Local native loopback | Core 21/21, integration lab 24/24 |
+
+The counts overlap. The browser observation used synthetic data and covered standard login, Guardian status, keyboard focus, logout and a 390-pixel viewport without horizontal overflow. Physical authenticator use, live Guardian binding and full recovery in the browser remain unverified.
+
+AI-assisted reviewers assessed the changes independently within the project. An external audit, independently verified key custody, hardware approval and production approval remain open. P2 is blocked.
+
+## Historical internal evaluation · 6 October 2026
+
+These results refer to the October evaluation of software 0.8.0, API v1 and schema 6. They establish the following platform-specific evidence for that date.
 
 | Historical scope | Reported outcome |
 | --- | --- |
@@ -11,8 +28,8 @@ All software results below are historical internal results dated 2026-10-06, not
 | Separate independent App20 environment | 20 exact distributions; 8 application checks passed; not authenticated login proof alone |
 | OCI Linux ARM64 | 24 functional and 9 container checks passed; four containers/five listeners; images Python 3.12.15, guest controller Python 3.12.3 |
 
-The sanitized JSON is a strict summary of retained private reports. It includes hashes of the original private evaluation and App source archives to identify the evidence scope, but no archive download or runtime state. Source signatures used an ephemeral test signer and a separately pinned test anchor; they do not attest a commercial manufacturer identity or later image builds.
+In the JSON, `current_evaluation` describes the November results. The historical fields and private archive hashes identify the October evaluation and its original private evaluation and sample App archives. The October test signatures used an ephemeral signer and a separately pinned test anchor. Manufacturer identity and later image builds lie outside that evidence.
 
-The complete source, raw reports, exact original archives and reproduction prerequisites require individually approved private review. Public readers cannot reproduce the PAS suite from this documentation-only tree. Current documentation checks validate publication boundaries, local links and figures only. A successful documentation CI run is not a PAS test badge.
+Individually approved private review is required to access the complete source, original archives, raw results and reproduction prerequisites. GitHub CI validates the public file inventory, local links, figures and pinned evidence. Reproducing the PAS results requires the private environment and a separately agreed scope.
 
-A fresh private evaluation needs an agreed scope, trusted Python/dependencies, synthetic private state, operator-controlled keys and approved hosting. Linux x86_64, Windows, arbitrary engines, real browser/hardware coverage, a real P1 48-hour run, independent HSM/HA and production operation remain unestablished.
+A fresh private evaluation needs trusted Python and dependencies, synthetic state, operator-controlled keys and approved hosting. Linux x86_64, Windows, other engines, a real 48-hour P1 run, independent HSM and high availability remain unverified.

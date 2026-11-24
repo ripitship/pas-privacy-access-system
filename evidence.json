@@ -9,5 +9,32 @@
   "native_linux": {"system": "Linux", "machine": "aarch64", "python": "3.12.3", "checks_passed": 53},
   "independent_app": {"exact_distributions": 20, "checks_passed": 8, "authenticated_login_proof_alone": false},
   "oci": {"system": "Linux", "machine": "aarch64", "functional_checks": 24, "container_checks": 9, "image_python": "3.12.15", "guest_controller_python": "3.12.3"},
-  "private_archive_sha256": {"evaluation": "26fb0dab0a4ea64f96b97c2982f6472ef61f0ff9c6ad92e31feac0d816d73ca9", "application": "b7f6f40f6cdb583618513155e4069c84e6d379cfd431292b5f58bea933c6d354"}
+  "private_archive_sha256": {"evaluation": "26fb0dab0a4ea64f96b97c2982f6472ef61f0ff9c6ad92e31feac0d816d73ca9", "application": "b7f6f40f6cdb583618513155e4069c84e6d379cfd431292b5f58bea933c6d354"},
+  "current_evaluation": {
+    "date": "2026-11-23",
+    "classification": "controlled internal evaluation; sanitized projection",
+    "software_version": "0.8.0",
+    "api": "v1",
+    "schema": 6,
+    "production_ready": false,
+    "hardware_verified": false,
+    "p2_available": false,
+    "regression": {"passed": 1118, "skipped": 14, "failures": 0, "errors": 0, "dependency_warnings": 2},
+    "node_ui_passed": 31,
+    "new_http_cases_in_regression": 3,
+    "counts_overlap": true,
+    "native_loopback": {"core": {"passed": 21, "total": 21}, "integration_lab": {"passed": 24, "total": 24}},
+    "browser_observation": {
+      "synthetic_data_only": true,
+      "observed": ["standard login", "guardian status", "keyboard focus", "logout"],
+      "mobile_width_px": 390,
+      "no_horizontal_overflow": true,
+      "physical_authenticator_verified": false,
+      "live_browser_guardian_binding_verified": false,
+      "full_browser_recovery_verified": false
+    },
+    "review": {"internal": true, "ai_assisted": true, "external_audit": false},
+    "source_files_verified": 111,
+    "pas_tests_rerun_for_documentation_refresh": false
+  }
 }
